@@ -13,3 +13,11 @@ def home(request):
 
 def checkme(request):
     return render(request, 'huapp/checkme.html')
+
+
+def library(request):
+    return render(request, 'huapp/library.html')
+
+
+def calendar(request):
+    return render(request, 'huapp/calendar.html')
