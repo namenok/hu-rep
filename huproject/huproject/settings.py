@@ -76,10 +76,16 @@ WSGI_APPLICATION = 'huproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        "client": 'mongodb+srv://arinaznamenok:rnaoHQ949X22BtQx@cluster0.ltwuzun.mongodb.net/?appName=Cluster0',
-        "db": 'dbname',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'oryna',
+        'PASSWORD': 'arina95arina',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
-}
+# http://127.0.0.1/pgadmin4/browser/
+
 
 
 # Password validation
