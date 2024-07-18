@@ -1,13 +1,13 @@
 from django.db import models
 
 
-class StudentData(models.Model):
-    name = models.CharField(max_length=100)
-    standard = models.CharField(max_length=100)
-    section = models.CharField(max_length=100)
+class HomeInfo(models.Model):
+    text = models.CharField(max_length=200)
+    img = models.ImageField()
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.text
+    # а як повернути картинку ? чи потрібно
 
 
-class TeachertData(models.Model):
-    name = models.CharField(max_length=100)
-    ClassTeacherOF = models.CharField(max_length=100)
-    Salary = models.CharField(max_length=100)

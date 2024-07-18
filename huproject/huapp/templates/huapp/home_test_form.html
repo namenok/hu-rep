@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home_test_form_title</title>
+</head>
+<body>
+    <form action="{% url 'huapp:home_test_form' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit">Add test_info</button>
+    </form>
+</body>
+</html>

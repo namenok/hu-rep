@@ -1,14 +1,10 @@
 from django import forms
-from .models import TeachertData, StudentData
+
+from .models import HomeInfo
 
 
-class StudentForm(forms.ModelForm):
+class HomeInfoForm(forms.ModelForm):
     class Meta:
-        model = StudentData
-        fields = "__all__"
-
-
-class TeacherForm(forms.ModelForm):
-    class Meta:
-        model = TeachertData
-        fields = "__all__"
+        model = HomeInfo
+        fields = ['text', 'img', ]
+        labels = {'text': 'test text', 'img': 'test img'}
