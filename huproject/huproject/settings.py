@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'huproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
+        'NAME': 'shitdb',
         'USER': 'oryna',
-        'PASSWORD': 'arina95arina',
-        'HOST': 'localhost',
+        'PASSWORD': 'oryna95',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }

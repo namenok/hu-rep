@@ -8,6 +8,8 @@ class HomeInfo(models.Model):
 
     def __str__(self):
         return self.text
-    # а як повернути картинку ? чи потрібно
 
 
+class Person(models.Model):
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
