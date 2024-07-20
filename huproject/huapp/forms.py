@@ -8,3 +8,4 @@ class HomeInfoForm(forms.ModelForm):
         model = HomeInfo
         fields = ['text', 'img', ]
         labels = {'text': 'test text', 'img': 'test img'}
+

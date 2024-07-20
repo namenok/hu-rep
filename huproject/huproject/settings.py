@@ -80,12 +80,14 @@ WSGI_APPLICATION = 'huproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'shitdb',
-        'USER': 'oryna',
-        'PASSWORD': 'oryna95',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'shitdb',
+        # 'USER': 'oryna',
+        # 'PASSWORD': 'oryna95',
+        # 'HOST': '127.0.0.1',
+        # 'PORT': '5432',
     }
 }
 # http://127.0.0.1/pgadmin4/browser/
