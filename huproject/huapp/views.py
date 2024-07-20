@@ -1,7 +1,17 @@
 from django.shortcuts import render, redirect
 from django.http import Http404
-from .forms import HomeInfoForm
+from .forms import HomeInfoForm, GeeksForm
 from django.contrib.auth.decorators import login_required
+
+
+@login_required()
+def home_view(request):
+    form = GeeksForm(request.POST)
+    if form.is_valid():
+        form.save()
+    context = {'form': form}
+    return render(request, 'huapp/geeks.html', context=context)
+
 
 
 def index(request):
@@ -36,9 +46,9 @@ def home_test_form(request):
     else:
         form = HomeInfoForm(request.POST)
         if form.is_valid():
-            new_forminfo = form.save(commit=False)
-            new_forminfo.owner = request.user
-            new_forminfo.save()
+            new_form_info = form.save(commit=False)
+            new_form_info.owner = request.user
+            new_form_info.save()
             return redirect('huapp:home')
 
     context = {'form': form}

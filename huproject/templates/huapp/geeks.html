@@ -3,13 +3,14 @@
 {% block title %}Home page{% endblock title %}
 
 {% block content %}
-
 <h1>це домашня сторінка з формою текст фото та кнопками куди піти далі - календар, опрос чи бібліотечка</h1>
 <h1>це домашня сторінка з формою текст фото та кнопками куди піти далі - календар, опрос чи бібліотечка</h1>
-{% include 'huapp/home_test_form.html' %}
 <h1>це домашня сторінка з формою текст фото та кнопками куди піти далі - календар, опрос чи бібліотечка</h1>
-{% include 'huapp/geeks.html' %}
 
-
+    <form action="{% url 'huapp:geeks' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit">Add geeks</button>
+    </form>
 
 {% endblock content %}
