@@ -1,11 +1,10 @@
 from django.contrib import admin
 
+from .models import Entry
 
-from .models import HomeInfo, Person, GeeksModel
+admin.site.register(Entry)
 
-admin.site.register(HomeInfo)
 
-admin.site.register(Person)
-admin.site.register(GeeksModel)
+
 
 

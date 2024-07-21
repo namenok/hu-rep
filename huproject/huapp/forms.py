@@ -1,19 +1,15 @@
 from django import forms
 
-from .models import HomeInfo
-
-from .models import GeeksModel
+from .models import Entry
 
 
-class GeeksForm(forms.ModelForm):
+class EntryForm(forms.ModelForm):
     class Meta:
-        model = GeeksModel
-        fields = "__all__"
+        model = Entry
+        fields = ['text', ]
+        labels = {'text': 'Entry text'}
+        widgets = {'text': forms.Textarea(attrs={'cols': 80})}
 
 
-class HomeInfoForm(forms.ModelForm):
-    class Meta:
-        model = HomeInfo
-        fields = ['text', 'img', ]
-        labels = {'text': 'text', 'img': 'img'}
+
 

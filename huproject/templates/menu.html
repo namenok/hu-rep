@@ -15,6 +15,9 @@
             <li class="nav-item">
             <a class="nav-link" href="{% url 'huapp:library' %}">Library</a>
           </li>
+             <li class="nav-item">
+            <a class="nav-link" href="{% url 'huapp:checkme' %}">Checkme</a>
+          </li>
         </ul>
           <span class="navbar-text">
             {% if user.is_authenticated %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}HOME PAGE{% endblock title %}
+
+{% block content %}
+    <p><a href="{% url 'huapp:home' %}"></a></p>
+
+    <p>ДОДАТИ ДУМКУ:</p>
+    <form action="{% url 'huapp:new_entry' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit">Add entry</button>
+    </form>
+{% endblock content %}

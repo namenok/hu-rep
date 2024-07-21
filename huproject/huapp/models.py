@@ -2,28 +2,17 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class HomeInfo(models.Model):
-    text = models.CharField(max_length=200)
-    img = models.ImageField(upload_to="images/")
+class Entry(models.Model):
+
+    text = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.text
-
-
-class GeeksModel(models.Model):
-    title = models.CharField(max_length=200)
-    description = models.TextField()
-    last_modified = models.DateTimeField(auto_now_add=True)
-    img = models.ImageField(upload_to="images/")
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    class Meta:
+        verbose_name_plural = 'Entries'
 
     def __str__(self):
-        return self.title
+        return f'{self.text[:50]}...'
 
 
 
-class Person(models.Model):
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
