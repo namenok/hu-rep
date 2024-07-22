@@ -5,7 +5,7 @@
 {% block content %}
     <p><a href="{% url 'huapp:home' %}"></a></p>
 
-    <p>ДОДАТИ ДУМКУ:</p>
+    <p style="background-color:MediumSeaGreen">ДОДАТИ свої думки:</p>
     <form action="{% url 'huapp:new_entry' %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
