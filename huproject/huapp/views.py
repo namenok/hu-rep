@@ -1,3 +1,5 @@
+
+
 from django.shortcuts import render, redirect
 
 from .forms import EntryForm
@@ -8,27 +10,25 @@ from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse
 from django.shortcuts import render
 
+from .forms import FotoForm
 
+
+@login_required()
 def image_upload(request):
-    if request.method == 'POST' and request.FILES['image']:
-        image = request.FILES['image']
-        fs = FileSystemStorage()
 
-        # save the image on MEDIA_ROOT folder
-        file_name = fs.save(image.name, image)
+    if request.method == 'POST':
+        form = FotoForm(request.POST, request.FILES)
 
-        # get file url with respect to `MEDIA_URL`
-        file_url = fs.url(file_name)
-        return HttpResponse(file_url)
+        if form.is_valid():
+
+            form.save()
+            return redirect('huapp:home')
     else:
-        # render the form
-        return render(request, "image_uploads.html")
+        form = FotoForm()
+    return render(request, 'huapp/image_uploads.html', {'form': form})
 
-
-
-
-
-
+def success(request):
+    return HttpResponse('successfully uploaded')
 
 
 def index(request):

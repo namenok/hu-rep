@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Entry
+from .models import Entry, Foto
 
 
 class EntryForm(forms.ModelForm):
@@ -11,5 +11,8 @@ class EntryForm(forms.ModelForm):
         widgets = {'text': forms.Textarea(attrs={'cols': 80})}
 
 
-
+class FotoForm(forms.ModelForm):
+    class Meta:
+        model = Foto
+        fields = ['image']
 

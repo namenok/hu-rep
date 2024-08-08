@@ -15,4 +15,6 @@ class Entry(models.Model):
         return f'{self.text[:50]}...'
 
 
+class Foto(models.Model):
 
+    image = models.ImageField(upload_to='media')

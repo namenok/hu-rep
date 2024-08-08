@@ -3,18 +3,23 @@
 {% block title %}Home page{% endblock title %}
 
 {% block content %}
+<hr>
+<hr>
+<hr>
+<hr>
+
+<hr>
+<hr>
+<hr>
+<hr>
+
+<a class="nav-link" href="{% url 'huapp:new_entry' %}">Залишити свої важливі думки тут !</a>
+<hr>
+<hr>
+<hr>
+<hr>
 
 
-<h1>основна сторінка для записів</h1>
-<h1>основна сторінка для записів</h1>
-<h1>основна сторінка для записів</h1>
-<h1>основна сторінка для записів</h1>
-
-
-
-{% include 'huapp/new_entry.html' %}
-
-{% include 'huapp/image_uploads.html' %}
-
+<a class="nav-link" href="{% url 'huapp:image_uploads' %}">Завантажити зображення тут !</a>
 
 {% endblock content %}
