@@ -1,12 +1,9 @@
 {% extends 'base.html' %}
 
-{% block title %}Home page{% endblock title %}
-
 {% block content %}
 
-<h1>календарна таблиця</h1>
-<h1>календарна таблиця</h1>
-<h1>календарна таблиця</h1>
+{% load static %}
+<h1>календарна таблиця3</h1>
 
 <style>
 table, th, td {
@@ -15,8 +12,9 @@ table, th, td {
 }
 </style>
 </head>
+    <!-- Custom styles for this template -->
+  <link href="{% static 'huapp/style.css'%}" rel="stylesheet">
 <body>
-
 
 <p style="background-color:tomato;">Тицни на день та передивись попередньо додані записи та фото з подальшою можливістю зберегти! </p>
 
@@ -71,12 +69,8 @@ table, th, td {
 </tr>
 </table>
 
-
 <button type="button">Отримати статистику !</button>
 </body>
 </html>
 
-
-
-
-{% endblock content %}
+{% endblock %}

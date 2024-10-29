@@ -1,12 +1,9 @@
 {% extends 'base.html' %}
-
-{% block title %}Home page{% endblock title %}
-
+{% load static %}
 {% block content %}
 
-<h1> перевіряти</h1>
-<h1> перевіряти</h1>
-<h1> перевіряти</h1>
+<link href="{% static 'huapp/for_check.css'%}" rel="stylesheet">
+<h1>Перевірити свій стан!</h1>
 <p style="background-color:tomato;">Опитування</p>
 
 <input type="checkbox"  name="vehicle1" value="Bike">
@@ -40,6 +37,26 @@
 <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
 <label for="vehicle3"> середній настрій</label><br>
 
+<input type="checkbox"  name="vehicle1" value="Bike">
+<label for="vehicle1"> гарний настрій</label><br>
+<input type="checkbox"  name="vehicle2" value="Car">
+<label for="vehicle2"> поганий настрій</label><br>
+<input type="checkbox"  name="vehicle3" value="Boat">
+<label for="vehicle3"> середній настрій</label><br>
+<input type="checkbox"  name="vehicle1" value="Bike">
+<label for="vehicle1"> гарний настрій</label><br>
+<input type="checkbox"  name="vehicle2" value="Car">
+<label for="vehicle2"> поганий настрій</label><br>
+<input type="checkbox"  name="vehicle3" value="Boat">
+<label for="vehicle3"> середній настрій</label><br>
+<input type="checkbox"  name="vehicle1" value="Bike">
+<label for="vehicle1"> гарний настрій</label><br>
+<input type="checkbox"  name="vehicle2" value="Car">
+<label for="vehicle2"> поганий настрій</label><br>
+<input type="checkbox"  name="vehicle3" value="Boat">
+<label for="vehicle3"> середній настрій</label><br>
+<input type="checkbox"  name="vehicle1" value="Bike">
+
 <button type="button">зберегти !</button>
 
-{% endblock content %}
+{% endblock %}

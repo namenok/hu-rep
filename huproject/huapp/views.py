@@ -37,7 +37,17 @@ def index(request):
 
 @login_required()
 def home(request):
-    return render(request, 'huapp/home.html')
+
+    # тимчасовий приклад
+    lst = ['one', 'two', 'three']
+    title = "Вітаю!"
+    context = {
+        "title":title,
+        "list_data": lst,
+    }
+
+
+    return render(request, 'huapp/home.html', context=context)
 
 
 @login_required()
