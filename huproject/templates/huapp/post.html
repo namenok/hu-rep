@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+
+{% load static %}
+
+<link href="{% static 'huapp/for_lib.css'%}" rel="stylesheet">
+
+    <h1 class="page-header">
+        <a >{{post.title}} </a>
+    </h1>
+    <p><a>автор: {{ post.user }}</a>
+
+    </p>
+    <p>дата поступ: {{ post.published_date }}</p>
+    <hr>
+    <img class="img-responsive" src="{{post.poster}}" alt="">
+    <hr>
+    <p> {{ post.content }} </p>
+{% endblock content %}

@@ -1,16 +1,24 @@
+from django.shortcuts import render, redirect, get_object_or_404
 
-
-from django.shortcuts import render, redirect
-
-from .forms import EntryForm
+from .forms import EntryForm, FotoForm
 from django.contrib.auth.decorators import login_required
-
+from .models import Category, Post, LibText, Teg
 
 from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse
-from django.shortcuts import render
 
-from .forms import FotoForm
+
+
+
+
+def get_categories():
+    all = Category.objects.all()
+    count = all.count()
+
+    return {
+        "cat1":all[:count//2],
+        "cat2":all[count//2:]
+    }
 
 
 @login_required()
@@ -57,7 +65,28 @@ def checkme(request):
 
 @login_required()
 def library(request):
-    return render(request, 'huapp/library.html')
+    post_blog_list = Post.objects.all().order_by("-published_date")
+    # id_post_blog_list = Post.objects.get(pk=1) #просто перевірили фільтр
+    my_posts_list = LibText.objects.all()
+    # category_list = Category.objects.all()
+
+    tegs = Teg.objects.all()
+
+    context = {"post_blog_list": post_blog_list,
+               "my_posts_list": my_posts_list,
+               # "category_list": category_list,
+               # "post": id_post_blog_list,
+               "tegs": tegs}
+    context.update(get_categories())
+
+    return render(request, 'huapp/library.html', context=context)
+
+
+def post(request, id=None):
+    post = get_object_or_404(Post, pk=id)
+    context={"post": post}
+    context.update(get_categories())
+    return  render(request, 'huapp/post.html', context=context)
 
 
 @login_required()
@@ -85,3 +114,11 @@ def new_entry(request):
         context=context)
 
 
+
+
+def category(request, name=None):
+    c = get_object_or_404(Category, name=name)
+    posts = Post.objects.filter(category=c)
+    context = {'posts': posts}
+    context.update(get_categories())
+    return render(request, 'huapp/library.html', context=context)

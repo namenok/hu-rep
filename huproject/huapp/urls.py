@@ -13,5 +13,9 @@ urlpatterns = [
     path('new_entry', views.new_entry, name='new_entry'),
 
     path('image_uploads', views.image_upload, name='image_uploads'),
+    path('post/<int:id>', views.post, name='post'),
+
+    path('category/<str:name>', views.category, name='category')
+
 
 ]

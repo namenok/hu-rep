@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
+
 {% load static %}
 {% block content %}
 
-<link href="{% static 'huapp/for_check.css'%}" rel="stylesheet">
+<link href="{% static 'huapp/new_check.css'%}" rel="stylesheet">
 <h1>Перевірити свій стан!</h1>
 <p style="background-color:tomato;">Опитування</p>
 
@@ -47,6 +48,7 @@
 <label for="vehicle1"> гарний настрій</label><br>
 <input type="checkbox"  name="vehicle2" value="Car">
 <label for="vehicle2"> поганий настрій</label><br>
+
 <input type="checkbox"  name="vehicle3" value="Boat">
 <label for="vehicle3"> середній настрій</label><br>
 <input type="checkbox"  name="vehicle1" value="Bike">
@@ -60,3 +62,4 @@
 <button type="button">зберегти !</button>
 
 {% endblock %}
+
